@@ -119,6 +119,15 @@
             color: hsl(var(--foreground));
             letter-spacing: -0.02em;
             text-decoration: none;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        .logo:hover {
+            color: hsl(var(--foreground));
+            text-decoration: none;
+            background: none;
         }
 
         .nav-links {
@@ -1093,7 +1102,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
-                    <a href="index.html" class="btn-secondary">See How It Works</a>
+                    <a href="#how-it-works" class="btn-secondary">See How It Works</a>
                 </div>
                 <div class="stats-row">
                     <div class="stat-item">
@@ -1193,7 +1202,7 @@
 
 
         <!-- ── FEATURE SHOWCASE ── -->
-        <section class="feature-showcase">
+        <section class="feature-showcase" id="how-it-works">
             <div class="container-wide">
                 <div class="section-header" style="text-align:center; max-width:640px; margin: 0 auto 4rem;">
                     <span class="section-badge badge-blue">How It Works</span>
