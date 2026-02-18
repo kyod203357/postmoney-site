@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — PostMoney</title>
+    <style>
+        :root {
+            /* Portfolio Manager Design System */
+            --background: 0 0% 100%;
+            --foreground: 0 0% 10%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 10%;
+            --primary: 0 0% 20%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 0 0% 96%;
+            --secondary-foreground: 0 0% 10%;
+            --muted: 0 0% 96%;
+            --muted-foreground: 0 0% 50%;
+            --accent: 0 0% 96%;
+            --accent-foreground: 0 0% 20%;
+            --border: 0 0% 90%;
+            --ring: 0 0% 20%;
+            --radius: 0.5rem;
+            --success: 142 76% 36%;
+            --warning: 38 92% 50%;
+            --danger: 0 84% 60%;
+
+            /* Complementary Accent Colors */
+            --blue: 220 70% 50%;
+            --blue-muted: 220 60% 95%;
+            --teal: 180 60% 45%;
+            --teal-muted: 180 50% 95%;
+            --purple: 260 60% 55%;
+            --purple-muted: 260 50% 96%;
+            --amber: 38 90% 55%;
+            --amber-muted: 38 80% 95%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle background pattern */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+                linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+            background-size: 64px 64px;
+            opacity: 0.3;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 600px;
+            background: radial-gradient(ellipse, hsl(var(--muted)), transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: hsl(var(--background));
+            box-shadow: 0 1px 0 hsl(var(--border));
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: hsl(var(--foreground));
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: hsl(var(--foreground));
+        }
+
+        .nav-cta {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: white !important;
+            background: hsl(var(--blue));
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            transition: all 0.15s;
+            border: 1px solid hsl(var(--blue));
+        }
+
+        .nav-cta:hover {
+            background: hsl(220 70% 44%);
+            border-color: hsl(220 70% 44%);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 0 6rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8125rem;
+            color: hsl(var(--teal));
+            background: hsl(var(--teal-muted));
+            border: 1px solid hsl(var(--teal) / 0.2);
+            padding: 0.375rem 0.875rem;
+            border-radius: 100px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: hsl(var(--success));
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: 3.75rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.035em;
+            margin-bottom: 1.5rem;
+            color: hsl(var(--foreground));
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: hsl(var(--muted-foreground));
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .btn-primary {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: white;
+            background: hsl(var(--blue));
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid hsl(var(--blue));
+        }
+
+        .btn-primary:hover {
+            background: hsl(220 70% 44%);
+            border-color: hsl(220 70% 44%);
+        }
+
+        .btn-primary svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-secondary {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: hsl(var(--foreground));
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            transition: all 0.15s;
+        }
+
+        .btn-secondary:hover {
+            background: hsl(var(--accent));
+        }
+
+        /* Stats */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: hsl(var(--blue));
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 0.375rem;
+        }
+
+        .stat-label {
+            font-size: 0.8125rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 0.75rem;
+            padding: 0.25rem 0.625rem;
+            border-radius: 100px;
+            border: 1px solid transparent;
+        }
+
+        .section-badge.badge-blue {
+            color: hsl(var(--blue));
+            background: hsl(var(--blue-muted));
+            border-color: hsl(220 70% 50% / 0.2);
+        }
+
+        .section-badge.badge-teal {
+            color: hsl(var(--teal));
+            background: hsl(var(--teal-muted));
+            border-color: hsl(180 60% 45% / 0.2);
+        }
+
+        .section-badge.badge-purple {
+            color: hsl(var(--purple));
+            background: hsl(var(--purple-muted));
+            border-color: hsl(260 60% 55% / 0.2);
+        }
+
+        .section-badge.badge-amber {
+            color: hsl(var(--amber));
+            background: hsl(var(--amber-muted));
+            border-color: hsl(38 90% 55% / 0.2);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: hsl(var(--foreground));
+        }
+
+        /* Problem */
+        .problem {
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .problem-text p {
+            font-size: 1rem;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .problem-text strong {
+            color: hsl(var(--foreground));
+            font-weight: 600;
+        }
+
+        .problem-visual {
+            background: hsl(var(--muted));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 2rem;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.8125rem;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.8;
+        }
+
+        .problem-visual .highlight {
+            color: hsl(var(--foreground));
+            font-weight: 600;
+        }
+
+        .problem-visual .error {
+            color: hsl(var(--danger));
+        }
+
+        /* Features */
+        .features {
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-color: hsl(var(--primary) / 0.3);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: hsl(var(--muted));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 1.75;
+        }
+
+        .feature-icon.blue {
+            background: hsl(220 70% 50% / 0.1);
+        }
+        .feature-icon.blue svg { stroke: hsl(var(--blue)); }
+
+        .feature-icon.teal {
+            background: hsl(180 60% 45% / 0.1);
+        }
+        .feature-icon.teal svg { stroke: hsl(var(--teal)); }
+
+        .feature-icon.purple {
+            background: hsl(260 60% 55% / 0.1);
+        }
+        .feature-icon.purple svg { stroke: hsl(var(--purple)); }
+
+        .feature-icon.amber {
+            background: hsl(38 90% 55% / 0.12);
+        }
+        .feature-icon.amber svg { stroke: hsl(var(--amber)); }
+
+        .feature-card.card-blue  { border-top: 2px solid hsl(var(--blue)); }
+        .feature-card.card-teal  { border-top: 2px solid hsl(var(--teal)); }
+        .feature-card.card-purple { border-top: 2px solid hsl(var(--purple)); }
+        .feature-card.card-amber  { border-top: 2px solid hsl(var(--amber)); }
+
+        .feature-card h3 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.8125rem;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.6;
+        }
+
+        /* Segments */
+        .segments {
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .segment-card {
+            padding: 1.5rem;
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-left: 3px solid hsl(var(--blue));
+            border-radius: var(--radius);
+            transition: all 0.2s;
+        }
+
+        .segment-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left-color: hsl(var(--teal));
+        }
+
+        .segment-card:nth-child(2) {
+            border-left-color: hsl(var(--teal));
+        }
+
+        .segment-card:nth-child(2):hover {
+            border-left-color: hsl(var(--purple));
+        }
+
+        .segment-card:nth-child(3) {
+            border-left-color: hsl(var(--purple));
+        }
+
+        .segment-card:nth-child(3):hover {
+            border-left-color: hsl(var(--blue));
+        }
+
+        .segment-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .segment-card h3::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: hsl(var(--primary));
+            border-radius: 2px;
+        }
+
+        .segment-card ul {
+            list-style: none;
+        }
+
+        .segment-card li {
+            font-size: 0.8125rem;
+            color: hsl(var(--muted-foreground));
+            padding: 0.375rem 0;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .testimonial-card {
+            padding: 1.75rem;
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            transition: all 0.2s;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card.card-blue  { border-top: 2px solid hsl(var(--blue)); }
+        .testimonial-card.card-teal  { border-top: 2px solid hsl(var(--teal)); }
+        .testimonial-card.card-purple { border-top: 2px solid hsl(var(--purple)); }
+
+        .testimonial-quote {
+            font-size: 0.9375rem;
+            color: hsl(var(--foreground));
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testimonial-quote::before {
+            content: '\201C';
+            font-size: 1.5rem;
+            color: hsl(var(--muted-foreground));
+            line-height: 0;
+            vertical-align: -0.4em;
+            margin-right: 0.15em;
+        }
+
+        .testimonial-author {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: hsl(var(--muted-foreground));
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Mission */
+        .mission {
+            border-top: none;
+        }
+
+        .mission-content {
+            max-width: 640px;
+        }
+
+        .mission p {
+            font-size: 1rem;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .mission-quote {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: hsl(var(--muted));
+            border-left: 3px solid hsl(var(--primary));
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .mission-quote p {
+            font-size: 0.9375rem;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .mission-quote cite {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: hsl(var(--muted-foreground));
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            border-top: none;
+            text-align: center;
+            padding: 8rem 0;
+            background: hsl(220 30% 10%);
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta > p {
+            font-size: 1rem;
+            color: hsl(220 15% 60%);
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .price {
+            color: hsl(var(--blue));
+            font-weight: 600;
+        }
+
+        .cta-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: hsl(220 30% 16%);
+            border: 1px solid hsl(220 25% 25%);
+            padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+            border-radius: var(--radius);
+        }
+
+        .cta-box span {
+            font-size: 0.875rem;
+            color: hsl(220 15% 60%);
+        }
+
+        .cta-box .btn-primary {
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid hsl(var(--border));
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-brand {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: hsl(var(--foreground));
+            letter-spacing: -0.02em;
+        }
+
+        .footer-tagline {
+            font-size: 0.8125rem;
+            color: hsl(var(--muted-foreground));
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .footer-section h4 {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 0.8125rem;
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+            padding: 0.25rem 0;
+            transition: color 0.15s;
+        }
+
+        .footer-section a:hover {
+            color: hsl(var(--foreground));
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid hsl(var(--border));
+            font-size: 0.75rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .problem-content {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-visual {
+                display: none;
+            }
+
+            .features-grid,
+            .segments-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .features-grid,
+            .segments-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                flex-direction: column;
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-badge,
+        .hero h1,
+        .hero-subtitle,
+        .hero-buttons,
+        .stats-row {
+            animation: fadeIn 0.6s ease-out both;
+        }
+
+        .hero h1 { animation-delay: 0.05s; }
+        .hero-subtitle { animation-delay: 0.1s; }
+        .hero-buttons { animation-delay: 0.15s; }
+        .stats-row { animation-delay: 0.2s; }
+    
+        /* ── Feature Showcase ── */
+        .container-wide {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .feature-showcase {
+            padding: 6rem 0;
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .feature-showcase .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 4rem;
+        }
+
+        .feature-showcase .section-description {
+            font-size: 1.125rem;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.7;
+            margin-top: 0.75rem;
+        }
+
+        .feature-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .feature-content:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-content.reverse {
+            direction: rtl;
+        }
+
+        .feature-content.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-text h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .feature-text p {
+            font-size: 1rem;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .feature-list li {
+            font-size: 0.8125rem;
+            color: hsl(var(--foreground));
+            background: hsl(var(--muted));
+            border: 1px solid hsl(var(--border));
+            padding: 0.3rem 0.75rem;
+            border-radius: 100px;
+            line-height: 1.4;
+        }
+
+        .feature-image {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ── Supporting Feature Cards (compact 3-col) ── */
+        .supporting-features {
+            padding: 4rem 0 6rem;
+        }
+
+        .supporting-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* ── KPI Grid ── */
+        .kpi-section {
+            padding: 6rem 0;
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .kpi-section .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 0;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .kpi-category {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+
+        .kpi-category h4 {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 1rem;
+        }
+
+        .kpi-category ul {
+            list-style: none;
+        }
+
+        .kpi-category li {
+            padding: 0.375rem 0;
+            font-size: 0.875rem;
+            color: hsl(var(--foreground));
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .kpi-category li:last-child {
+            border-bottom: none;
+        }
+
+        .category-financial { border-left: 3px solid hsl(var(--blue)); }
+        .category-growth    { border-left: 3px solid hsl(var(--teal)); }
+        .category-operational { border-left: 3px solid hsl(var(--purple)); }
+        .category-validation  { border-left: 3px solid hsl(var(--amber)); }
+
+        /* ── Responsive: Feature Showcase ── */
+        @media (max-width: 1024px) {
+            .feature-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .feature-content.reverse {
+                direction: ltr;
+            }
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ── Mid-Page CTA ── */
+        .mid-cta {
+            padding: 4rem 0;
+            border-top: 1px solid hsl(var(--border));
+            border-bottom: 1px solid hsl(var(--border));
+            background: hsl(var(--blue-muted));
+            text-align: center;
+        }
+
+        .mid-cta h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.75rem;
+        }
+
+        .mid-cta p {
+            font-size: 1rem;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 1.75rem;
+        }
+
+
+        /* ── Color block: KPI (dark navy) ── */
+        .kpi-section {
+            background: hsl(220 30% 10%);
+        }
+
+        .kpi-section .section-title {
+            color: white;
+        }
+
+        .kpi-section .section-badge {
+            color: hsl(var(--teal));
+            background: hsl(180 60% 45% / 0.15);
+            border-color: hsl(180 60% 45% / 0.3);
+        }
+
+        .kpi-section > .container > p {
+            color: hsl(220 15% 60%);
+        }
+
+        .kpi-section .kpi-category {
+            background: hsl(220 30% 14%);
+            border-color: hsl(220 25% 22%);
+        }
+
+        .kpi-section .kpi-category h4 {
+            color: hsl(220 15% 55%);
+        }
+
+        .kpi-section .kpi-category li {
+            color: hsl(220 20% 80%);
+            border-bottom-color: hsl(220 25% 20%);
+        }
+
+        /* ── Color block: Testimonials (warm muted) ── */
+        .testimonials {
+            background: hsl(var(--muted));
+        }
+
+        /* ── Color block: Mission (light blue tint) ── */
+        .mission {
+            background: hsl(var(--blue-muted));
+        }
+
+
+        /* ── Feature showcase: tinted bg + card panels ── */
+        .feature-showcase {
+            background: hsl(220 20% 97%);
+        }
+
+        .feature-panel {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.75rem;
+            padding: 2.5rem 3rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-panel:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-panel .feature-content {
+            margin-bottom: 0;
+        }
+
+    
+    /* Legal page styles */
+    .legal-hero { padding: 7rem 0 3rem; text-align: center; border-bottom: 1px solid hsl(var(--border)); }
+    .legal-hero h1 { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .legal-hero p { font-size: 0.9375rem; color: hsl(var(--muted-foreground)); }
+    .legal-content { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .legal-content h2 { font-size: 1.125rem; font-weight: 600; color: hsl(var(--foreground)); margin: 2.5rem 0 0.75rem; }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content p { font-size: 0.9375rem; color: hsl(var(--muted-foreground)); line-height: 1.8; margin-bottom: 1rem; }
+    .legal-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .legal-content li { font-size: 0.9375rem; color: hsl(var(--muted-foreground)); line-height: 1.8; margin-bottom: 0.375rem; }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">PostMoney</div>
+                <nav class="nav-links">
+                    <a href="index.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="faq.html">Docs</a>
+                    <a href="signup.html" class="nav-cta">Get Early Access</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="legal-hero">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p>Last updated: February 2026</p>
+            </div>
+        </section>
+
+        <div class="legal-content">
+
+            <h2>1. Overview</h2>
+            <p>PostMoney ("we," "us," or "our") operates postmoney.io. This Privacy Policy explains how we collect, use, and protect your information when you use our Service. We take your privacy seriously — especially given the sensitive nature of the financial data you trust us with.</p>
+
+            <h2>2. Information We Collect</h2>
+            <p>We collect:</p>
+            <ul>
+                <li><strong>Account information:</strong> name, email address, fund name, and fund size provided during registration</li>
+                <li><strong>Documents you upload:</strong> portfolio company updates and reports you submit for processing</li>
+                <li><strong>Extracted data:</strong> KPIs and metrics our AI extracts from your documents</li>
+                <li><strong>Usage data:</strong> how you interact with the product (pages visited, features used, session duration)</li>
+                <li><strong>Payment information:</strong> processed securely by our payment provider; we do not store card details</li>
+            </ul>
+
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Provide, maintain, and improve the Service</li>
+                <li>Process documents and extract portfolio data on your behalf</li>
+                <li>Generate LP reports and analytics</li>
+                <li>Send product updates, billing notices, and support communications</li>
+                <li>Comply with legal obligations</li>
+            </ul>
+
+            <h2>4. Data Storage and Security</h2>
+            <p>Your data is stored on secure, encrypted servers. We use industry-standard security measures including encryption in transit (TLS) and at rest. Access to your data is restricted to authorized personnel only. We do not sell your data.</p>
+
+            <h2>5. Document and Financial Data</h2>
+            <p>Documents you upload and data extracted from them are treated as confidential. We do not use your portfolio company data to train AI models or share it with third parties. Extracted KPIs are stored in your account and accessible only to you.</p>
+
+            <h2>6. Third-Party Services</h2>
+            <p>We use third-party services to operate PostMoney, including:</p>
+            <ul>
+                <li>Cloud infrastructure (for hosting and storage)</li>
+                <li>Payment processing</li>
+                <li>Analytics (aggregated, anonymized usage data only)</li>
+                <li>AI processing (document extraction)</li>
+            </ul>
+            <p>These providers are contractually bound to handle your data in accordance with this policy.</p>
+
+            <h2>7. Data Retention</h2>
+            <p>We retain your data for as long as your account is active. If you cancel your account, your data is retained for 30 days before deletion. You may request immediate deletion by contacting us.</p>
+
+            <h2>8. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access the personal data we hold about you</li>
+                <li>Correct inaccurate data</li>
+                <li>Request deletion of your data</li>
+                <li>Export your data in a portable format</li>
+                <li>Opt out of non-essential communications</li>
+            </ul>
+            <p>Contact us at <a href="mailto:privacy@postmoney.io">privacy@postmoney.io</a> to exercise any of these rights.</p>
+
+            <h2>9. Cookies</h2>
+            <p>We use essential cookies to operate the Service (session management, authentication). We do not use advertising or tracking cookies. You can disable cookies in your browser, though this may affect functionality.</p>
+
+            <h2>10. Children's Privacy</h2>
+            <p>PostMoney is not intended for users under 18. We do not knowingly collect data from minors.</p>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of material changes by email. Continued use of the Service constitutes acceptance of the updated policy.</p>
+
+            <h2>12. Contact</h2>
+            <p>For privacy questions or requests, contact: <a href="mailto:privacy@postmoney.io">privacy@postmoney.io</a></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">PostMoney</div>
+                    <p class="footer-tagline">Run your fund.<br>We'll handle the reports.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="index.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="#">Changelog</a>
+                </div>
+                <div class="footer-section">
+                    <h4>For</h4>
+                    <a href="index.html">Boutique VCs</a>
+                    <a href="index.html">Family Offices</a>
+                    <a href="index.html">Angel Networks</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="faq.html">Docs</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Community</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="mailto:hello@postmoney.io">Contact</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 PostMoney. Built for boutique funds. &nbsp;&middot;&nbsp; <a href="terms.html" style="color:hsl(var(--muted-foreground));text-decoration:none;">Terms</a> &nbsp;&middot;&nbsp; <a href="privacy.html" style="color:hsl(var(--muted-foreground));text-decoration:none;">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

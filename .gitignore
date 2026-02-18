@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Working files (originals kept during development)
+postmoney-best.html
+postmoney-pricing.html
+postmoney-signup.html
+postmoney-faq.html
+postmoney-terms.html
+postmoney-privacy.html
+postmoney.html
+postmoney-app.html
+
+# Plans / workshop files (internal)
+COPY_BRIEF.md
+STYLE_GUIDE.md
