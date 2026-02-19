@@ -21,6 +21,10 @@ postmoney-privacy.html
 postmoney.html
 postmoney-app.html
 
+# Cloudflare / Wrangler
+.wrangler/
+node_modules/
+
 # Plans / workshop files (internal)
 COPY_BRIEF.md
 STYLE_GUIDE.md
