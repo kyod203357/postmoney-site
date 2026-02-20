@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KTLMNKBP');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Early Access — PostMoney</title>
@@ -1231,6 +1238,10 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTLMNKBP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="bg-grid"></div>
     <div class="bg-glow"></div>
@@ -1383,6 +1394,66 @@
             </div>
         </div>
     </footer>
+
+    <!-- Form submission handler with GTM tracking -->
+    <script>
+    (function() {
+        var form = document.querySelector('form');
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var btn = form.querySelector('button[type="submit"]');
+            var originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = 'Submitting&hellip;';
+
+            var data = {};
+            var formData = new FormData(form);
+            formData.forEach(function(value, key) {
+                data[key] = value;
+            });
+
+            fetch('/api/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(function(res) {
+                if (!res.ok) throw new Error('Server error');
+                return res.json();
+            })
+            .then(function() {
+                // Push form_submit event to GTM dataLayer
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'form_submit',
+                    'form_name': 'early_access_signup',
+                    'fund_size': data.fund_size || ''
+                });
+
+                form.innerHTML = '<div style="text-align:center;padding:2rem 0;">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="hsl(160,60%,45%)" style="margin-bottom:1rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>' +
+                    '<h3 style="margin-bottom:0.5rem;color:hsl(220,25%,15%);">You\'re on the list!</h3>' +
+                    '<p style="color:hsl(220,10%,50%);">We\'ll reach out soon with your early access invite.</p>' +
+                    '</div>';
+            })
+            .catch(function() {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                var err = form.querySelector('.form-error');
+                if (!err) {
+                    err = document.createElement('p');
+                    err.className = 'form-error';
+                    err.style.cssText = 'color:hsl(0,70%,55%);text-align:center;margin-top:1rem;font-size:0.9rem;';
+                    form.appendChild(err);
+                }
+                err.textContent = 'Something went wrong. Please try again.';
+            });
+        });
+    })();
+    </script>
 
 </body>
 </html>
