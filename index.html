@@ -1144,6 +1144,29 @@
             margin-bottom: 0;
         }
 
+        .feature-panel-hero .feature-hero-text {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 2rem;
+        }
+        .feature-panel-hero .feature-hero-text h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.75rem;
+        }
+        .feature-panel-hero .feature-hero-text p {
+            color: hsl(var(--muted-foreground));
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        .feature-panel-hero .feature-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0.5rem;
+        }
+
 
         /* Dark mode: adapt intentionally-dark sections */
         [data-theme="dark"] .final-cta {
@@ -1317,20 +1340,15 @@
                 </div>
 
                 <!-- Feature 1: Setup -->
-                <div class="feature-panel">
-                <div class="feature-content">
-                    <div class="feature-text">
+                <div class="feature-panel feature-panel-hero">
+                    <div class="feature-hero-text">
                         <h3>Setup in minutes.<br>Then it runs itself.</h3>
                         <p>We create an email specific to your fund. Share it with your portfolio companies and PostMoney does the rest. Watch your quarterly reports become actionable without lifting a finger.</p>
                         <p>Already have a year of quarterly emails sitting in your inbox? Forward them over. PostMoney builds your full portfolio history automatically.</p>
                     </div>
-                    <div class="feature-image">
-                        <picture>
-                        <source media="(max-width: 768px)" srcset="images/screenshot-dashboard-mobile.png">
-                        <img src="images/screenshot-dashboard.png" alt="PostMoney portfolio dashboard showing company KPI tracking and trends" style="width:100%;height:auto;display:block;">
-                    </picture>
+                    <div class="feature-hero-image">
+                        <img src="images/pipeline-flow.png" alt="PostMoney pipeline: receive, extract, insight">
                     </div>
-                </div>
                 </div><!-- /feature-panel -->
             </div>
         </section>
@@ -1389,8 +1407,8 @@
                     </div>
                     <div class="feature-image">
                         <picture>
-                        <source media="(max-width: 768px)" srcset="images/screenshot-batch-mobile.png">
-                        <img src="images/screenshot-batch.png" alt="PostMoney portfolio dashboard" style="width:100%;height:auto;display:block;">
+                        <source media="(max-width: 768px)" srcset="images/screenshot-dashboard-mobile.png">
+                        <img src="images/screenshot-dashboard.png" alt="PostMoney portfolio dashboard" style="width:100%;height:auto;display:block;">
                     </picture>
                     </div>
                 </div>
