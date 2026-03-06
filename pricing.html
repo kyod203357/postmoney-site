@@ -12,37 +12,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PostMoney Pricing — Simple, transparent pricing for boutique funds and family offices.">
     <title>Pricing — PostMoney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Portfolio Manager Design System */
+            /* PostMoney Brand — Light Theme v1.0 */
             --background: 0 0% 100%;
-            --foreground: 0 0% 10%;
+            --foreground: 233 24% 10%;   /* #101626 */
             --card: 0 0% 100%;
-            --card-foreground: 0 0% 10%;
-            --primary: 0 0% 20%;
+            --card-foreground: 233 24% 10%;
+            --primary: 231 97% 61%;      /* #435DFD */
             --primary-foreground: 0 0% 100%;
-            --secondary: 0 0% 96%;
-            --secondary-foreground: 0 0% 10%;
-            --muted: 0 0% 96%;
-            --muted-foreground: 0 0% 50%;
-            --accent: 0 0% 96%;
-            --accent-foreground: 0 0% 20%;
-            --border: 0 0% 90%;
-            --ring: 0 0% 20%;
-            --radius: 0.5rem;
+            --secondary: 240 25% 97%;    /* #F4F4FE */
+            --secondary-foreground: 233 24% 10%;
+            --muted: 240 25% 97%;        /* #F4F4FE */
+            --muted-foreground: 220 11% 61%;  /* #8790A7 */
+            --accent: 231 80% 96%;       /* #EFEFFC */
+            --accent-foreground: 231 97% 61%;
+            --border: 237 17% 87%;       /* #D6D6E3 */
+            --ring: 231 97% 61%;
+            --radius: 0.75rem;
             --success: 142 76% 36%;
             --warning: 38 92% 50%;
             --danger: 0 84% 60%;
 
-            /* Complementary Accent Colors */
-            --blue: 220 70% 50%;
-            --blue-muted: 220 60% 95%;
-            --teal: 180 60% 45%;
-            --teal-muted: 180 50% 95%;
-            --purple: 260 60% 55%;
-            --purple-muted: 260 50% 96%;
+            /* Accent Colors — PostMoney Palette */
+            --blue: 231 97% 61%;         /* #435DFD */
+            --blue-muted: 231 80% 96%;   /* #EFEFFC */
+            --teal: 206 74% 55%;         /* #3598E0 */
+            --teal-muted: 206 60% 95%;
+            --purple: 259 78% 71%;       /* #9779F0 */
+            --purple-muted: 259 60% 96%;
             --amber: 38 90% 55%;
             --amber-muted: 38 80% 95%;
+        }
+
+        [data-theme="dark"] {
+            /* PostMoney Brand — Dark Theme v1.0 */
+            --background: 236 30% 2%;    /* #050508 */
+            --foreground: 237 75% 97%;   /* #F4F4FE */
+            --card: 236 25% 6%;          /* #0D0D14 */
+            --card-foreground: 237 75% 97%;
+            --primary: 231 97% 61%;      /* #435DFD */
+            --primary-foreground: 0 0% 100%;
+            --secondary: 236 20% 9%;     /* #12121C */
+            --secondary-foreground: 237 75% 97%;
+            --muted: 236 20% 9%;         /* #12121C */
+            --muted-foreground: 220 11% 61%;  /* #8790A7 */
+            --accent: 231 50% 14%;
+            --accent-foreground: 237 75% 97%;
+            --border: 240 15% 11%;
+            --ring: 231 97% 61%;
+            --success: 142 76% 46%;
+            --warning: 38 92% 55%;
+            --blue-muted: 231 50% 12%;
+            --teal-muted: 206 50% 11%;
+            --purple-muted: 259 50% 12%;
+            --amber-muted: 38 50% 12%;
         }
 
         * {
@@ -57,12 +84,16 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: hsl(var(--background));
             color: hsl(var(--foreground));
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
+        h1, h2, h3, h4 {
+            font-family: 'DM Sans', 'Inter', sans-serif;
+        }
+
 
         /* Subtle background pattern */
         .bg-grid {
@@ -86,7 +117,7 @@
             transform: translateX(-50%);
             width: 1000px;
             height: 600px;
-            background: radial-gradient(ellipse, hsl(var(--muted)), transparent 70%);
+            background: radial-gradient(ellipse, hsl(var(--blue) / 0.06), transparent 70%);
             pointer-events: none;
             z-index: -1;
             opacity: 0.5;
@@ -118,24 +149,19 @@
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: hsl(var(--foreground));
-            letter-spacing: -0.02em;
             text-decoration: none;
-            background: none;
             border: none;
             padding: 0;
             cursor: pointer;
             position: relative;
             z-index: 110;
             pointer-events: auto;
+            color: #101626;
+            display: flex;
+            align-items: center;
         }
-        .logo:hover {
-            color: hsl(var(--foreground));
-            text-decoration: none;
-            background: none;
-        }
+        .logo:hover { opacity: 0.8; }
+        [data-theme="dark"] .logo { color: #F4F4FE; }
 
         .nav-links {
             display: flex;
@@ -166,8 +192,8 @@
         }
 
         .nav-cta:hover {
-            background: hsl(220 70% 44%);
-            border-color: hsl(220 70% 44%);
+            background: hsl(var(--blue) / 0.88);
+            border-color: hsl(var(--blue) / 0.88);
         }
 
         /* Hero */
@@ -242,8 +268,8 @@
         }
 
         .btn-primary:hover {
-            background: hsl(220 70% 44%);
-            border-color: hsl(220 70% 44%);
+            background: hsl(var(--blue) / 0.88);
+            border-color: hsl(var(--blue) / 0.88);
         }
 
         .btn-primary svg {
@@ -777,6 +803,28 @@
                 display: none;
             }
 
+            .nav-links {
+                gap: 0.75rem;
+            }
+
+            .nav-cta {
+                font-size: 0.8125rem;
+                padding: 0.4rem 0.75rem;
+                white-space: nowrap;
+            }
+
+            .logo {
+                overflow: hidden;
+                width: 44px;
+                flex-shrink: 0;
+            }
+
+            .logo svg {
+                height: 36px;
+                width: auto;
+                flex-shrink: 0;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
             }
@@ -1050,7 +1098,7 @@
 
         /* ── Feature showcase: tinted bg + card panels ── */
         .feature-showcase {
-            background: hsl(220 20% 97%);
+            background: hsl(var(--muted));
         }
 
         .feature-panel {
@@ -1222,6 +1270,53 @@
             }
         }
 
+
+        /* Dark mode: adapt intentionally-dark sections */
+        [data-theme="dark"] .final-cta {
+            background: hsl(236 25% 6%);
+        }
+        [data-theme="dark"] .cta-box {
+            background: hsl(236 20% 9%);
+            border-color: hsl(240 15% 16%);
+        }
+        [data-theme="dark"] .kpi-section {
+            background: hsl(236 25% 6%);
+        }
+        [data-theme="dark"] .kpi-section .kpi-category {
+            background: hsl(236 20% 9%);
+            border-color: hsl(240 15% 14%);
+        }
+        [data-theme="dark"] header {
+            backdrop-filter: blur(12px);
+            background: hsl(var(--background) / 0.92);
+        }
+
+        /* ── Theme Toggle ── */
+        .theme-toggle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid hsl(var(--border));
+            background: hsl(var(--card));
+            color: hsl(var(--muted-foreground));
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            padding: 0;
+        }
+        .theme-toggle:hover {
+            background: hsl(var(--muted));
+            color: hsl(var(--foreground));
+            border-color: hsl(var(--ring));
+        }
+        .theme-toggle svg { width: 16px; height: 16px; }
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: block; }
+        [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+        [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
     </style>
 </head>
 <body>
@@ -1238,7 +1333,22 @@
 <header>
     <div class="container">
         <div class="header-inner">
-            <a href="./" class="logo">PostMoney</a>
+            <a href="./" class="logo">
+                    <svg width="140" height="34" viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="nav-logo-grad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#435DFD"/>
+                                <stop offset="100%" stop-color="#9779F0"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="2" y="32" width="11" height="18" rx="2" fill="url(#nav-logo-grad)"/>
+                        <rect x="17" y="24" width="11" height="26" rx="2" fill="url(#nav-logo-grad)"/>
+                        <rect x="32" y="14" width="11" height="36" rx="2" fill="url(#nav-logo-grad)"/>
+                        <path d="M50 14 L62 2" stroke="url(#nav-logo-grad)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M55 2 L62 2 L62 9" stroke="url(#nav-logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="76" y="36" font-family="'DM Sans', sans-serif" font-weight="700" font-size="28" fill="currentColor" letter-spacing="-0.5">PostMoney</text>
+                    </svg>
+                </a>
             <nav class="nav-links">
                 <a href="./">Features</a>
                 <a href="pricing.html">Pricing</a>
@@ -1468,5 +1578,22 @@
     </div>
 </footer>
 
+
+    <script>
+      (function() {
+        var root = document.documentElement;
+        var stored = localStorage.getItem('pm-theme');
+        if (stored === 'dark') root.setAttribute('data-theme', 'dark');
+        document.addEventListener('DOMContentLoaded', function() {
+          var btn = document.getElementById('themeToggle');
+          if (!btn) return;
+          btn.addEventListener('click', function() {
+            var isDark = root.getAttribute('data-theme') === 'dark';
+            root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('pm-theme', isDark ? 'light' : 'dark');
+          });
+        });
+      })();
+    </script>
 </body>
 </html>
